@@ -1,0 +1,101 @@
+<!DOCTYPE>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org">
+		
+
+<head>
+
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link th:href="@{/css/phone.css}" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Individual Phone</title>
+</head>
+
+<body>
+
+
+	<div class="container">	
+		<!--  <form th:action="@{/logout}" method="get">
+        <button class="btn btn-md btn-danger btn-block" name="registration"
+                type="Submit">Logout
+        </button>
+   		 </form> -->
+   		 <br>
+   		
+		<h3 class="phone-head">Phone Individual</h3>
+		<br>
+		
+		<!-- <a class = "back-home-first" th:href="@{/index}">Back to Home Page</a> -->
+		<table class="table table-bordered table-striped" id="scrollmenu">
+			<thead class="thead-dark">
+				<tr class="tr-center-spyros">
+					<th>Owner</th>
+					<th>Brand</th>
+					<th>Model</th>
+					<th>Department</th>
+					<th>Full Number</th>
+					<th>Short Number</th>
+		            <th>PIN</th>
+					<th>PUK</th>
+					<th>IMEI</th>
+					<th>Price</th>
+					<th>Status</th>
+					<th>Program</th>
+					<th>Sim No</th>
+					<th>Abroad</th>
+					<th>Notes</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody class='table-box'>
+				
+				<tr th:each="tempPhone : ${phones}" class="tr-center-spyros" >
+			
+					<td th:text="${tempPhone.ownerName}">
+					<td th:text="${tempPhone.brand}">
+					<td th:text="${tempPhone.model}">
+					<td th:text="${tempPhone.getDepartmentInfo().getDepartmentName()}">				
+					<td th:text="${tempPhone.fullNumber}">
+					<td th:text="${tempPhone.shortNumber}">					
+					<td th:text="${tempPhone.pin}">
+					<td th:text="${tempPhone.puk}">
+					<td th:text="${tempPhone.imei}">
+					<td th:text="${tempPhone.price}">
+					<td th:text="${tempPhone.getStatusInfo().getStatus()}">
+					<td th:text="${tempPhone.program}">
+					<td th:text="${tempPhone.simNo}">
+					<td th:text="${tempPhone.getAbroadInfo().getAbroad()}">
+					<td th:text="${tempPhone.notes}">
+					
+					<td>
+						
+						<!--  Add update button/link 	-->
+					  	<a th:href="@{/phone/showUpdateForm(phoneId=${tempPhone.phoneId})}"
+						   class="btn">
+						   <i class="fa fa-edit"></i>
+						</a> 
+						
+					   <!-- Add delete button/link	--> 
+						<a th:href="@{/phone/delete(phoneId=${tempPhone.phoneId})}"
+						   class="btn"
+						   onclick="if (!(confirm('Are you sure you want to delete this phone?'))) return false">
+						   <i class="fa fa-trash"></i>
+						</a>
+												
+					</td>
+				</tr>
+			
+			</tbody>
+		</table>
+		<a th:href="@{/phones/list}">Back to Phone List</a> 
+	</div>
+
+
+</body>
+
+</html>

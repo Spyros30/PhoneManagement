@@ -1,0 +1,63 @@
+body {
+	height: 100%;
+	min-width: 900px;
+	background: url('/images/background_image_form.jpg') repeat scroll center center;
+	background-attachment: fixed;
+	background-size: cover;	
+}
+
+.hr_spyros {
+	border-color:grey;	
+}
+
+.form_spyros {
+	text-align:center; 
+    margin: 0 auto; 
+    width:640px;
+}
+
+
+#link_spyros {
+	text-align:center;
+	display:block;
+	padding-bottom:50px;
+	color: linear-gradient(red, yellow, green);
+	background-image: linear-gradient(to left, blue, turquoise);   -webkit-background-clip: text;
+    color: transparent;
+}
+
+#text_spyros_top{	
+	padding-top:30px;
+	display:block;
+	text-align:center;
+	color: linear-gradient(red, yellow, green);
+	background-image: linear-gradient(to left, blue, turquoise);   -webkit-background-clip: text;
+    color: transparent;
+}
+
+#button_spyros{
+	color: linear-gradient(red, yellow, green);
+	background-image: linear-gradient(to left, blue, turquoise);   -webkit-background-clip: button;     
+	border: none;
+	width: 100px;
+	text-color: white;
+}
+
+.text_show_spyros {
+	color:white;	
+}
+
+.label_spyros {
+	color:white;
+	font-size:18px;
+	float:left;
+	display: inline-block;
+	width:180px;
+}
+
+#form_spyros_width {
+	width: 300px;
+}
+
+
+

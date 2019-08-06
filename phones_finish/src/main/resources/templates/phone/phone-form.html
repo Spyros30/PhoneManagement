@@ -1,0 +1,129 @@
+<!DOCTYPE>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link th:href="@{/css/phone-form.css}" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title>Save Phone</title>
+</head>
+
+<body>
+
+	<div class="container">
+		
+		<!--  <form th:action="@{/logout}" method="get">
+        <button class="btn btn-md btn-danger btn-block" name="registration"
+                type="Submit">Logout
+        </button>
+   		</form> -->
+   		 
+		
+		<p class="h4 mb-4" id="text_spyros_top">Save Phone</p>
+		
+		<form action="#" th:action="@{/phone/save}"
+						 th:object="${phone}" method="POST"
+						 class="form_spyros">
+				
+			<!--  Add hidden form field to handle update -->
+			<input type="hidden" th:field="*{phoneId}" />
+						 
+			<p class="label_spyros">Brand</p>
+			<input type="text" th:field="*{brand}"
+					class="form-control mb-4" id="form_spyros_width" placeholder="Brand">
+			
+			<p class="label_spyros">Model</p>		
+			<input type="text" th:field="*{model}"
+					class="form-control mb-4" id="form_spyros_width" placeholder="Model">
+				
+			<p class="label_spyros">IMEI</p>			
+			<input type="text" th:field="*{imei}"
+					class="form-control mb-4" id="form_spyros_width" placeholder="IMEI">
+			
+			<p class="label_spyros">Price</p>		
+			<input type="text" th:field="*{price}"
+					class="form-control mb-4" id="form_spyros_width" placeholder="Price">
+			
+			<p class="label_spyros">Status</p>
+			<select th:field="*{statusInfo}" class="form-control mb-4" id="form_spyros_width">
+			
+					<option th:each="statusInfo: ${statussInfo}" th:value="${statusInfo.statusId}" th:text="${statusInfo.status}"></option>
+								
+			</select>
+			
+			<p class="label_spyros">Department</p>		
+			<select th:field="*{departmentInfo}" class="form-control mb-4" id="form_spyros_width">
+			
+					<option th:each="departmentInfo : ${departmentsInfo}" th:value="${departmentInfo.departmentId}" th:text="${departmentInfo.departmentName}"></option>
+								
+			</select>
+			
+			<p class="label_spyros">Owner Name</p>
+			<input type="text" th:field="*{ownerName}"
+					class="form-control mb-4" id="form_spyros_width" placeholder="Owner Name">
+			
+			<p class="label_spyros">Full Number</p>		
+			<input type="text" th:field="*{fullNumber}"
+					class="form-control mb-4" id="form_spyros_width" placeholder="Full Number">
+			
+			<p class="label_spyros">Short Number</p>						
+			<input type="text" th:field="*{shortNumber}"
+					class="form-control mb-4" id="form_spyros_width" placeholder="Short Number">
+			
+			<p class="label_spyros">Program</p>		
+			<input type="text" th:field="*{program}"
+					class="form-control mb-4" id="form_spyros_width" placeholder="Program">
+			
+			<p class="label_spyros">Sim No</p>			
+			<input type="text" th:field="*{simNo}"
+					class="form-control mb-4" id="form_spyros_width" placeholder="Sim No">
+			
+			<!--  <p class="text_show_spyros">PIN</p> -->
+			
+			<p class="label_spyros">PIN</p>
+			<input type="text" th:field="*{pin}"
+					class="form-control mb-4" id="form_spyros_width" placeholder="PIN">
+					
+			<!--  <p class="text_show_spyros">PUK</p> -->
+			
+			<p class="label_spyros">PUK</p>
+			<input type="text" th:field="*{puk}"
+					class="form-control mb-4" id="form_spyros_width" placeholder="PUK">
+			
+			
+			<p class="label_spyros">Abroad</p>
+			<select th:field="*{abroadInfo}" class="form-control mb-4" id="form_spyros_width">
+			
+					<option th:each="abroadInfo : ${abroadsInfo}" th:value="${abroadInfo.abroadId}" th:text="${abroadInfo.abroad}"></option>
+								
+			</select>
+			
+			<p class="label_spyros">Notes</p>
+			<textarea class="form-control mb-4" id="form_spyros_width" th:field="*{notes}"
+						placeholder="Notes"></textarea>
+						
+						
+					<br>
+
+			<button type="submit" class="btn" id="button_spyros">Save</button>
+			
+		</form>			
+		
+					
+			
+		
+		
+		<hr>
+		<a th:href="@{/phones/list}" id="link_spyros">Back to Phone List</a>
+		
+		
+	</div>
+
+</body>
+
+</html>

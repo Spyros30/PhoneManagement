@@ -1,0 +1,76 @@
+body {
+	height: 100%;
+	min-width: 900px;
+	background: url('/images/background_phone.jpg') repeat scroll center center;
+	background-attachment: fixed;
+	background-size: cover;	
+}
+
+.table-box {
+	background-color: white;	
+}
+
+.phone-head {
+	color: white;
+}
+
+.back-home {
+	padding-bottom: 50px;
+	color: #00FFFF;
+}
+
+.back-home-first {
+	
+	text-align: right;
+	float: right;
+	color: #00FFFF;
+}
+
+.btn {
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 8px 12px; /* Some padding */
+  font-size: 14px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+.tr-center-spyros {
+	text-align:center;
+}
+
+#scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+#scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+#scrollmenu a:hover {
+  background-color: #777;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
